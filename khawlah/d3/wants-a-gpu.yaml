@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: wants-a-gpu
+spec:
+  containers:
+    - name: wisher
+      image: khawlahup/aidc-serving:cpu-v1
+      command: ["sleep", "3600"]
+      resources:
+        requests:
+          nvidia.com/gpu: 1
+        limits:
+          nvidia.com/gpu: 1

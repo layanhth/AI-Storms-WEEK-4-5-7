@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: burner-unlimited
+spec:
+  replicas: 20
+  selector: {matchLabels: {app: burner-unlimited}}
+  template:
+    metadata: {labels: {app: burner-unlimited}}
+    spec:
+      containers:
+        - name: burner
+          image: khawlahup/aidc-serving:cpu-v1
+          command: ["python", "-c", "while True: pass"]

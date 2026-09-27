@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-b
+spec:
+  containers:
+  - name: serving
+    image: khawlahup/aidc-serving:cpu-v1
+    resources:
+      requests:
+        cpu: "64"
+    ports:
+    - containerPort: 8000

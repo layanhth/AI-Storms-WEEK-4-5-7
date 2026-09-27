@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-a
+spec:
+  containers:
+  - name: serving
+    image: khawlahup/aidc-serving:this-tag-does-not-exist
+    ports:
+    - containerPort: 8000

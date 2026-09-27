@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-c
+spec:
+  containers:
+  - name: serving
+    image: khawlahup/aidc-serving:cpu-v1
+    command: ["python", "-c", "import sys; sys.exit(1)"]
+    ports:
+    - containerPort: 8000
