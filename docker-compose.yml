@@ -1,0 +1,19 @@
+services:
+
+  backend:
+    build:
+      context: ./backend
+    container_name: ai-interviewer-backend
+    ports:
+      - "5000:5000"
+    restart: always
+
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: ai-interviewer-frontend
+    ports:
+      - "3000:80"
+    restart: always
+    
